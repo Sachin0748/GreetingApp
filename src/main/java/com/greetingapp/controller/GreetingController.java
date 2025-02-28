@@ -1,4 +1,4 @@
-package com.greetingapp;
+package com.greetingapp.controller;
 
 import org.springframework.web.bind.annotation.*;
 
