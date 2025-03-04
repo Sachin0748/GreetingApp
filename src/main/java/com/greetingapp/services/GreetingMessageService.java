@@ -39,4 +39,12 @@ public class GreetingMessageService {
         if(greetingMessageEntity == null) return "No Messages";
         return greetingMessageEntity.getMessage();
     }
+
+    public List<String> getAllMessage() {
+        return greetingRepository
+                .findAll()
+                .stream()
+                .map(GreetingMessageEntity::getMessage)
+                .collect(Collectors.toList());
+    }
 }
