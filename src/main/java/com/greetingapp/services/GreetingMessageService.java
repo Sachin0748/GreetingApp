@@ -55,4 +55,10 @@ public class GreetingMessageService {
         return modelMapper.map(greetingMessageEntity,GreetingMessageDTO.class);
     }
 
+    public boolean deleteMessage(Integer id) {
+        greetingRepository.deleteById(id);
+        if(greetingRepository.findById(id).orElse(null) != null) return false;
+        return true;
+    }
+
 }
