@@ -43,4 +43,10 @@ public class GreetingMessageController{
         return greetingMessageService.getAllMessage();
     }
 
+    @PutMapping("/{id}")
+    public GreetingMessageDTO modifyMessage(@PathVariable Integer id, @RequestBody String message){
+        logger.info("Modify the existing message : {} ",id);
+        return greetingMessageService.modifyMessage(id, message);
+    }
+
 }
